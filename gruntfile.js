@@ -27,6 +27,16 @@ module.exports = function(grunt) {
                     dest: 'images/build/'
                 }]
             }
+        },
+        less: {
+            development: {
+                options: {
+                    compress: true
+                },
+                files: {
+                    'css/build/minified/global.css': 'css/global.less'
+                }
+            }
         }
     });
 
@@ -34,7 +44,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
     // 4. Default task to run from command line
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin']);
+    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'less']);
 };

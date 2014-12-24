@@ -1,10 +1,10 @@
-$backgroundColor: #eee;
-$spacing: 2rem;
-$links: #35a8ff;
+@backgroundColor: #eee;
+@spacing: 2rem;
+@links: #35a8ff;
 
-@import "libs/normalize";
-@import "libs/owl.carousel";
-@import "owl.theme";
+@import "libs/normalize.less";
+@import "libs/owl.carousel.less";
+@import "owl.theme.less";
 
 
 * {
@@ -12,19 +12,19 @@ $links: #35a8ff;
 }
 
 html {
-  background: $backgroundColor;
-  padding: $spacing;
+  background: @backgroundColor;
+  padding: @spacing;
 }
 body {
-  padding: $spacing;
+  padding: @spacing;
   background: white;
 }
 
 a {
-  color: $links;
+  color: @links;
   text-decoration: none;
   &:hover, &:focus {
-    color: darken($links, 25%);
+    color: darken(@links, 25%);
   }
 }
 
